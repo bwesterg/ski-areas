@@ -12,6 +12,7 @@ Area.create([
     {
         name: "Vail",
         state: "Colorado",
+        age: 55,
         logo: "https://p.kindpng.com/picc/s/438-4386178_sponsor-logos-vail-vail-graphic-design-hd-png.png",
         ski: true,
         snowboard: true
@@ -19,6 +20,7 @@ Area.create([
     {
         name: "Alta",
         state: "Utah",
+        age: 82,
         logo: "https://res.cloudinary.com/altaskiarea/image/upload/v1567876882/resources/Media/logos/altabluedot.jpg",
         ski: true,
         snowboard: false
@@ -26,6 +28,7 @@ Area.create([
     {
         name: "Taos",
         state: "New Mexico",
+        age: 66,
         logo: "https://skinewmexico.com/wp-content/uploads/2019/09/Taos-Ski-Valley-300x300.png",
         ski: true,
         snowboard: false
@@ -33,6 +36,7 @@ Area.create([
     {
         name: "Silverton",
         state: "Colorado",
+        age: 19,
         logo: "https://silvertonmountain.com/wp-content/themes/silvertonmountain/images/logo-vert-lrg.png",
         ski: true,
         snowboard: true
