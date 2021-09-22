@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_22_190454) do
+ActiveRecord::Schema.define(version: 2021_09_22_192317) do
 
   create_table "areas", force: :cascade do |t|
-    t.integer "name"
+    t.string "name"
     t.string "state"
     t.string "logo"
+    t.integer "age"
     t.boolean "ski"
     t.boolean "snowboard"
     t.datetime "created_at", precision: 6, null: false
