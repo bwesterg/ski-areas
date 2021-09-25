@@ -20,5 +20,4 @@ export default function AreaList(props){
     return(
         <ul>{$areas}</ul>
     )
-
 }

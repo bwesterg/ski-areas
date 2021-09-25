@@ -1,8 +1,6 @@
 import React from 'react';
 import "./AreaListing.css"
 
-
-
 export default function AreaListing(props){
     return(
         <div>
