@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,4 +16,16 @@ header {
 
 main {
   padding: 0 3rem;
+}
+
+.add-area form {
+  width: 180px;
+  background-color: rgb(233, 255, 255);
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.add-area input {
+  display: block;
+  width: 100%;
 }

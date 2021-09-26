@@ -28,13 +28,14 @@ class App extends Component {
             <h2>Areas</h2>
               <AreaList areas={this.state.areas} />
           </section>
-          <section>
+          <section className="add-area">
             <h2>Add a Ski Area</h2>
             <form>
               <input type="text" placeholder="name" />
               <input type="text" placeholder="state" />
               <input type="text" placeholder="logo url" />
               <input type="number" placeholder="years in operation" />
+              <label value="Skiing Allowed?"/>
               <input type="checkbox" value="ski" />
               <input type="checkbox" value="snowboard" />
               <input type="submit" value="Add Area" />
