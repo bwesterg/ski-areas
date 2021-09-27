@@ -5,7 +5,15 @@ import AreaList from './AreaList';
 class App extends Component {
   
   state = {
-    areas: []
+    areas: [],
+    newArea: {
+      name: "",
+      state: "",
+      logo: "",
+      age: 1,
+      ski: false,
+      snowboard: false
+    }
   }
 
   componentDidMount(){
@@ -15,6 +23,29 @@ class App extends Component {
       .then(areas => {
         this.setState({ areas })
       })
+  }
+
+  // handleNameChange = (event) => {
+  //   this.setState({
+  //     newArea: {
+  //       ...this.state.newArea,
+  //       name: event.target.value
+  //     }
+  //   })
+  // }
+  // handleNameChange = (event) => {
+  //   this.setState({
+  //     newArea: {
+  //       ...this.state.newArea,
+  //       state: event.target.value
+  //     }
+  //   })
+  // }
+  // higher order function...
+  handleChange = property => (event) => {
+    const newArea = this.state.newArea
+    newArea[property] = event.target.value
+    this.setState({ newArea })
   }
 
   render() {
@@ -31,13 +62,44 @@ class App extends Component {
           <section className="add-area">
             <h2>Add a Ski Area</h2>
             <form>
-              <input type="text" placeholder="name" />
-              <input type="text" placeholder="state" />
-              <input type="text" placeholder="logo url" />
-              <input type="number" placeholder="years in operation" />
-              <label value="Skiing Allowed?"/>
-              <input type="checkbox" value="ski" />
-              <input type="checkbox" value="snowboard" />
+              <input 
+                type="text" 
+                placeholder="name" 
+                value={this.state.newArea.name}
+                onChange={this.handleChange("name")}
+              />
+              <input 
+                type="text" 
+                placeholder="state" 
+                value={this.state.newArea.state}
+                onChange={this.handleChange("state")}
+              />
+              <input 
+                type="text" 
+                placeholder="logo url" 
+                value={this.state.newArea.logo}
+                onChange={this.handleChange("logo")}
+              />
+              <input 
+                type="number" 
+                placeholder="years in operation" 
+                value={this.state.newArea.age}
+                onChange={this.handleChange("age")}
+              />
+              <input 
+                type="checkbox" 
+                value="ski" 
+                value={this.state.newArea.ski}
+                onChange={this.handleChange("ski")}
+
+              />
+              <input 
+                type="checkbox" 
+                value="snowboard" 
+                value={this.state.newArea.snowboard}
+                onChange={this.handleChange("snowboard")}
+
+              />
               <input type="submit" value="Add Area" />
 
 
