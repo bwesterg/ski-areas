@@ -7,6 +7,7 @@ export default function AreaList(props){
     const $areas = props.areas.map(area => {
         return <li key={area.id}>
             <AreaListing 
+                id={area.id}
                 name={area.name} 
                 age={area.age} 
                 state={area.state} 
