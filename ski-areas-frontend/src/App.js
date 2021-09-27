@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import AreaList from './AreaList';
+const BASE_URL = "http://localhost:3000"
 
 class App extends Component {
   
@@ -12,12 +13,12 @@ class App extends Component {
       logo: "",
       age: 1,
       ski: false,
-      snowboard: false
+      snowboard: false,
     }
   }
 
   componentDidMount(){
-    const URL = "http://localhost:3000/areas"
+    const URL = `${BASE_URL}/areas`
     fetch(URL)
       .then(res => res.json())
       .then(areas => {
@@ -41,11 +42,39 @@ class App extends Component {
   //     }
   //   })
   // }
+
+
   // higher order function...
-  handleChange = property => (event) => {
+  handleChange = property => event => {
     const newArea = this.state.newArea
     newArea[property] = event.target.value
     this.setState({ newArea })
+  }
+
+  addArea = (event) => {
+    event.preventDefault()
+
+    const { name, state, logo, age, ski, snowboard} = this.state.newArea
+    fetch(`${BASE_URL}/areas`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, state, logo, age, ski, snowboard })
+    }).then(response => response.json())
+    .then(area => {
+      this.setState({
+        areas: [...this.state.areas, area],
+        newArea: {
+          name: "",
+          state: "",
+          logo: "",
+          age: 1,
+          ski: false,
+          snowboard: false,
+        }
+      })
+    })
   }
 
   render() {
@@ -61,7 +90,7 @@ class App extends Component {
           </section>
           <section className="add-area">
             <h2>Add a Ski Area</h2>
-            <form>
+            <form onSubmit={this.addArea}>
               <input 
                 type="text" 
                 placeholder="name" 
@@ -76,7 +105,7 @@ class App extends Component {
               />
               <input 
                 type="text" 
-                placeholder="logo url" 
+                placeholder="url logo" 
                 value={this.state.newArea.logo}
                 onChange={this.handleChange("logo")}
               />
@@ -88,25 +117,19 @@ class App extends Component {
               />
               <input 
                 type="checkbox" 
-                value="ski" 
+                name="ski"
+                // value="ski" 
                 value={this.state.newArea.ski}
                 onChange={this.handleChange("ski")}
-
               />
               <input 
                 type="checkbox" 
-                value="snowboard" 
+                name="snowboard"
+                // value="snowboard" 
                 value={this.state.newArea.snowboard}
                 onChange={this.handleChange("snowboard")}
-
               />
               <input type="submit" value="Add Area" />
-
-
-
-
-
-
             </form>
           </section>
         </main>
