@@ -34,8 +34,8 @@ export default class AreaForm extends Component{
         const { name, state, logo, age, ski, snowboard } = this.state
         return(
             <section className="add-area">
-                <h2>Add a Ski Area</h2>
                 <form className="area-form" onSubmit={this.handleSubmit}>
+                <h2>Add a Ski Area</h2>
                     <input 
                     type="text" 
                     placeholder="name" 

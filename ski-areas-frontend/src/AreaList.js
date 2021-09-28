@@ -19,6 +19,6 @@ export default function AreaList(props){
     })
 
     return(
-        <ul>{$areas}</ul>
+        <ul className="area-list">{$areas}</ul>
     )
 }
