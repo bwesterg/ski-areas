@@ -79,8 +79,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Ski Areas App</h1>
-          <h2>Areas</h2>
             <AreaForm addArea={this.addArea}/>
+          <h2>Ski Area Collection</h2>
             <AreaList areas={this.state.areas} />
       </div>
     );

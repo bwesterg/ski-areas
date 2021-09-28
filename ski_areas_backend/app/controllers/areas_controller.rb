@@ -14,6 +14,13 @@ class AreasController < ApplicationController
         @area = Area.create(area_params)
         render json: @area, status: :created
     end
+
+    def destroy
+        @area = Area.find(params[:id])
+        @area.destroy
+        render json: :no_content
+    end
+
     
     private
     

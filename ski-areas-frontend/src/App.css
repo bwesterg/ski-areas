@@ -40,3 +40,20 @@ main {
   width: 200px;
   margin-bottom: 1rem;
 }
+
+.delete-button {
+  color: white;
+  background-color: rgb(250, 85, 85);
+}
+
+.area-card {
+  background-color: rgb(233, 255, 255);
+  width: 200px;
+}
+
+.area-list {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  justify-content: space-between;
+}
