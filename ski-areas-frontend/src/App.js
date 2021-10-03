@@ -75,13 +75,20 @@ class App extends Component {
   //   })
   // }
 
+  deleteArea = (id) => {
+    let filtered = this.state.areas.filter(area => area.id !== id)
+    this.setState({
+      areas: filtered
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Ski Areas App</h1>
             <AreaForm addArea={this.addArea}/>
           <h2>Ski Area Collection</h2>
-            <AreaList areas={this.state.areas} />
+            <AreaList areas={this.state.areas} deleteArea={this.deleteArea} />
       </div>
     );
   }
