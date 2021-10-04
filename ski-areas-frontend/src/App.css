@@ -43,13 +43,13 @@ main {
 
 .delete-button {
   color: white;
-  background-color: rgb(250, 85, 85);
+  background-color: rgb(259, 85, 85);
 }
 
 .area-card {
   display: flex;
   flex-direction: column;
-  background-color: rgb(233, 255, 255);
+  background-color: rgb(237, 255, 255);
   width: 200px;
   align-items: center;
   margin-bottom: 1.5rem;
