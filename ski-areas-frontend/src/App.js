@@ -50,30 +50,7 @@ class App extends Component {
   // }
 
 
-  // higher order function...
-  // handleChange = property => event => {
-  //   const newArea = this.state.newArea
-  //   newArea[property] = event.target.value
-  //   this.setState({ newArea })
-  // }
 
-  // addArea = (event) => {
-  //   event.preventDefault()
-
-  //   // const { name, state, logo, age, ski, snowboard} = this.state.newArea
-  //   fetch(`${BASE_URL}/areas`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify({ name, state, logo, age, ski, snowboard })
-  //   }).then(response => response.json())
-  //   .then(area => {
-  //     this.setState({
-  //       areas: [...this.state.areas, area]
-  //     })
-  //   })
-  // }
 
   deleteArea = (id) => {
     let filtered = this.state.areas.filter(area => area.id !== id)
