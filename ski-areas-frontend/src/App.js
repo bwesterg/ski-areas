@@ -32,22 +32,7 @@ class App extends Component {
     })
   }
 
-  // handleNameChange = (event) => {
-  //   this.setState({
-  //     newArea: {
-  //       ...this.state.newArea,
-  //       name: event.target.value
-  //     }
-  //   })
-  // }
-  // handleNameChange = (event) => {
-  //   this.setState({
-  //     newArea: {
-  //       ...this.state.newArea,
-  //       state: event.target.value
-  //     }
-  //   })
-  // }
+//removed notes
 
 
 
