@@ -32,11 +32,6 @@ class App extends Component {
     })
   }
 
-//removed notes
-
-
-
-
   deleteArea = (id) => {
     let filtered = this.state.areas.filter(area => area.id !== id)
     this.setState({
